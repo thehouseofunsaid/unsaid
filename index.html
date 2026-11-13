@@ -28,17 +28,12 @@ body.locked{overflow:hidden;height:100vh}
 /* ---------- headings ---------- */
 .kicker{font-family:'Great Vibes',cursive;font-size:clamp(2rem,9vw,2.6rem);color:var(--gold);line-height:1.1}
 .title{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.32em;font-size:clamp(1.15rem,5.4vw,1.6rem);color:var(--maroon);margin-top:6px;padding-left:.32em}
-.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:16px auto}
-.divider::before,.divider::after{content:'';width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
-.divider::after{transform:scaleX(-1)}
-.divider i{width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
 
-/* ---------- STEP 1 : GOD ENTRY (dark, full painting, opens from the middle) ---------- */
+/* ---------- STEP 1 : ENTRY (photo opens like temple doors) ---------- */
 #cover{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;cursor:pointer;
  background:radial-gradient(ellipse at 50% 40%,#0d1640 0%,#060b26 55%,#02040f 100%);transition:opacity 1s ease}
 #cover.gone{opacity:0;pointer-events:none}
 .god{position:relative;width:min(84vw,390px);height:min(80vh,700px);perspective:1300px;transition:transform 1.4s ease,opacity 1.2s ease}
-/* inner card revealed behind the doors */
 .god .card2{position:absolute;inset:0;border-radius:4px;overflow:hidden;
  background:radial-gradient(ellipse 60% 35% at 15% 85%,rgba(110,120,190,.45),transparent 70%),radial-gradient(ellipse 55% 35% at 88% 80%,rgba(235,140,70,.45),transparent 70%),linear-gradient(180deg,#fbf3e2,#f3e6cc);
  box-shadow:0 0 0 1px rgba(236,208,138,.5),0 30px 80px rgba(0,0,0,.7)}
@@ -47,7 +42,6 @@ body.locked{overflow:hidden;height:100vh}
 .god .card2 .lt{top:34px}.god .card2 .lb{bottom:30px;transform:scaleY(-1)}
 .god .beam{position:absolute;left:50%;top:0;bottom:0;width:6px;margin-left:-3px;opacity:0;
  background:linear-gradient(180deg,rgba(255,240,200,0),#fff7dc 20%,#fffdf3 50%,#fff7dc 80%,rgba(255,240,200,0));box-shadow:0 0 30px 14px rgba(255,214,130,.7),0 0 90px 40px rgba(255,200,110,.35);transition:opacity .5s ease .2s,transform .9s ease .2s;transform:scaleX(.4)}
-/* the two painted doors */
 .god .half{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;transition:transform 1.1s cubic-bezier(.6,0,.2,1),filter 1.1s ease;backface-visibility:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 .god .half img{position:absolute;top:0;height:100%;width:200%;object-fit:cover;object-position:center 30%;animation:kb2 14s ease-in-out infinite alternate}
 @keyframes kb2{to{transform:scale(1.06)}}
@@ -72,30 +66,23 @@ body.locked{overflow:hidden;height:100vh}
 #cover.open .god{transform:scale(1.18);opacity:0;transition:transform .8s ease,opacity .7s ease;transition-delay:1.3s}
 @keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
-/* ---------- STEP 2 : HERO (scrolls into the invitation) ---------- */
-.hero{position:relative;min-height:100svh;margin:0 -18px;padding:0 18px 150px;display:flex;flex-direction:column;align-items:center;text-align:center;overflow:hidden}
+/* ---------- STEP 2 : HERO ---------- */
+.hero{position:relative;margin:0 -18px;padding:0 18px 70px;display:flex;flex-direction:column;align-items:center;text-align:center;overflow:hidden}
 .hero>*{opacity:0}
 body.heroin .hero>*{animation:up 1.3s cubic-bezier(.2,.8,.2,1) forwards}
-.hero .art{position:relative;width:min(78vw,330px);aspect-ratio:3/4;margin-top:22px;border-radius:220px 220px 10px 10px;overflow:hidden;border:3px solid var(--gold);box-shadow:0 0 0 7px var(--ivory),0 0 0 8px var(--gold),0 0 50px rgba(236,190,100,.45),0 24px 50px rgba(110,20,35,.25)}
-body.heroin .hero .art{animation:artIn 1.8s ease forwards}
-@keyframes artIn{from{opacity:0;transform:translateY(-30px) scale(1.04)}to{opacity:1;transform:none}}
-.hero .art img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 18%;animation:kb 16s ease-in-out infinite alternate}
 .hero .brow{display:flex;justify-content:space-between;gap:10px;width:100%;padding:12px 6px 0;font-family:'Cinzel',serif;font-weight:600;letter-spacing:.06em;font-size:clamp(.6rem,2.9vw,.85rem);color:var(--maroon)}
 .hero .brow.te{font-family:'Noto Serif Telugu',serif;letter-spacing:0}
 body.heroin .hero .brow{animation-delay:.3s}
-.hero .halo{width:min(70vw,280px);aspect-ratio:1;margin-top:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
- background:radial-gradient(circle,#fff8e0 0%,rgba(246,220,148,.55) 40%,transparent 70%);box-shadow:inset 0 0 0 1px rgba(196,154,69,.5),0 0 0 14px rgba(196,154,69,.08),0 0 0 15px rgba(196,154,69,.35);
- font-size:6rem;color:var(--gold);text-shadow:0 0 30px rgba(236,190,90,.9)}
 .hero .tag{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.22em;font-size:clamp(.82rem,3.9vw,1.05rem);line-height:1.9;color:var(--maroon);margin-top:16px;padding-left:.22em}
-.hero .kick{font-family:'Great Vibes',cursive;font-size:clamp(2.8rem,12.5vw,3.6rem);margin-top:10px;line-height:1.15;padding:0 6px}
+.hero .kick{font-family:'Great Vibes',cursive;font-size:clamp(2rem,9vw,2.6rem);margin-top:6px;line-height:1.35;padding:0 .35em;display:inline-block;max-width:100%}
 .hero .tsub{font-family:'Noto Serif Telugu',serif;font-weight:700;color:#9c1446;font-size:.95rem;margin-top:2px}
-.hero .nm{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(4.6rem,22vw,6.4rem);line-height:1.08;cursor:pointer;
+.hero .nm{display:inline-block;font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(3.8rem,18vw,5.2rem);line-height:1.3;padding:0 .3em;cursor:pointer;
  background:linear-gradient(110deg,#6e1423 32%,#b8862e 43%,#fff4cc 50%,#b8862e 57%,#6e1423 68%);background-size:280% 100%;
  -webkit-background-clip:text;background-clip:text;color:transparent}
-body.heroin .hero .nm{animation:up 1.3s cubic-bezier(.2,.8,.2,1) forwards,shine 4s linear 1.5s infinite}
+body.heroin .hero .nm{animation:shine 4s linear 1.5s infinite}
 @keyframes shine{from{background-position:130% 0}to{background-position:-130% 0}}
-.hero .amp{font-family:'Great Vibes',cursive;font-size:2.6rem;color:var(--gold);line-height:1}
-.hero .hint2{font-style:italic;font-size:1.02rem;color:var(--text);margin-top:12px}
+.hero .amp{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--gold);line-height:.9}
+.hero .hint2{font-style:italic;font-size:1rem;color:var(--text);margin-top:14px;padding:0 10px}
 .hero .orb{position:relative;width:56px;height:56px;margin-top:26px;border-radius:50%;cursor:pointer;
  background:radial-gradient(circle at 40% 35%,#fffbe8 0%,#ffe08a 35%,#e2a83a 75%,#b07a20 100%);box-shadow:0 0 30px 12px rgba(255,214,120,.45)}
 body.heroin .hero .orb{animation:up 1.3s ease forwards,bob 2.2s ease-in-out 3s infinite,orbGlow 2.2s ease-in-out 3s infinite}
@@ -106,8 +93,7 @@ body.heroin .hero .orb{animation:up 1.3s ease forwards,bob 2.2s ease-in-out 3s i
  background:radial-gradient(ellipse 30% 70% at 20% 100%,rgba(255,150,60,.35),transparent 70%),radial-gradient(ellipse 35% 80% at 55% 100%,rgba(255,180,80,.4),transparent 70%),radial-gradient(ellipse 30% 70% at 85% 100%,rgba(255,140,50,.3),transparent 70%);
  animation:flick 2.6s ease-in-out infinite alternate}
 @keyframes flick{0%{filter:brightness(1)}50%{filter:brightness(1.15) saturate(1.2)}100%{filter:brightness(.92)}}
-body.heroin .hero .s1{animation-delay:1.2s}body.heroin .hero .s2{animation-delay:1.5s}body.heroin .hero .s3{animation-delay:1.7s}
-body.heroin .hero .n1{animation-delay:2s,3.5s}body.heroin .hero .amp{animation-delay:2.4s}body.heroin .hero .n2{animation-delay:2.7s,3.5s}
+body.heroin .hero .s1{animation-delay:1.2s}
 body.heroin .hero .hint2{animation-delay:3.2s}body.heroin .hero .orb{animation-delay:3.5s,4.8s,4.8s}body.heroin .hero .stxt{animation-delay:3.7s}
 body.heroin .hero .ember{animation:flick 2.6s ease-in-out infinite alternate;opacity:1}
 
@@ -132,31 +118,25 @@ body.opened #music{display:flex}
 @keyframes spin{to{transform:rotate(360deg)}}
 
 main{position:relative;z-index:2;max-width:520px;margin:0 auto;padding:0 18px 40px;text-align:center}
-section{padding:64px 0 10px}
+section{padding:34px 0 6px}
 .rv{opacity:0;transform:translateY(45px);transition:opacity 1.1s ease,transform 1.2s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
-
-/* ---------- divine art ---------- */
-.divine .art{position:relative;width:80%;margin:20px auto 0;aspect-ratio:3/4.3;border-radius:240px 240px 8px 8px;overflow:hidden;border:3px solid var(--gold);box-shadow:0 0 0 7px var(--ivory),0 0 0 8px var(--gold),0 24px 50px rgba(110,20,35,.25)}
-.divine .art img{width:100%;height:100%;object-fit:cover;animation:kb 16s ease-in-out infinite alternate}
 @keyframes kb{to{transform:scale(1.1)}}
-.divine p.te{color:var(--maroon);font-weight:700;font-size:1.15rem}
 
-/* ---------- venue art (big photo) ---------- */
-.vista{position:relative;margin:0 -18px;height:70vh;min-height:420px;overflow:hidden}
+/* ---------- function hall picture ---------- */
+.vista{position:relative;margin:0 -18px;height:56vh;min-height:360px;overflow:hidden}
 .vista img{width:100%;height:100%;object-fit:cover;object-position:center 55%;animation:kb 20s ease-in-out infinite alternate}
-.vista .miss{width:100%;height:100%;background:linear-gradient(180deg,#f3c58a 0%,#e9a07a 35%,#c86a5a 55%,#7a2a2a 100%)}
 .vista::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#f6cba5 0%,transparent 14%,transparent 72%,#f0b990 100%)}
 
 /* ---------- invitation ---------- */
 .lead{font-family:'Cinzel',serif;font-size:clamp(.82rem,3.8vw,1rem);letter-spacing:.08em;line-height:1.85;color:var(--text);margin-top:6px}
-.honor{font-family:'Cinzel',serif;letter-spacing:.12em;font-size:1rem;margin-top:22px}
+.honor{font-family:'Cinzel',serif;letter-spacing:.12em;font-size:1rem;margin-top:14px}
 .big{font-family:'Great Vibes',cursive;font-size:clamp(3.6rem,17vw,4.8rem);color:var(--maroon);line-height:1.15}
 .par{font-style:italic;font-size:1.15rem;margin-top:4px}
 .mandala-ic{width:96px;height:96px;margin:0 auto 6px}
 
 /* ---------- maroon framed box ---------- */
-.frame{margin:30px auto 0;padding:7px;border:1.5px solid var(--gold);background:var(--ivory);box-shadow:0 22px 45px rgba(74,11,22,.22)}
+.frame{margin:22px auto 0;padding:7px;border:1.5px solid var(--gold);background:var(--ivory);box-shadow:0 22px 45px rgba(74,11,22,.22)}
 .frame>div{padding:30px 18px;background:radial-gradient(ellipse at 50% 0%,#8f2236,#5a0d1b 70%);border:1px solid var(--gold);color:#fbefd8}
 .frame .lab{font-family:'Cinzel',serif;font-weight:700;letter-spacing:.35em;font-size:.82rem;color:var(--gold2);padding-left:.35em}
 .frame .day{font-family:'Cinzel',serif;font-size:clamp(.95rem,4.3vw,1.2rem);letter-spacing:.08em;margin-top:14px}
@@ -170,14 +150,16 @@ section{padding:64px 0 10px}
 .arch b{position:absolute;left:0;right:0;top:44%;transform:translateY(-50%);font-family:'Cinzel',serif;font-weight:700;font-size:clamp(1.4rem,7vw,2rem);color:#fbefd8}
 .arch small{display:block;margin-top:8px;font-family:'Cinzel',serif;letter-spacing:.18em;font-size:clamp(.55rem,2.6vw,.72rem);color:var(--maroon)}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
-.pair .arch .in{position:absolute;left:0;right:0;top:46%;transform:translateY(-50%);color:var(--gold2)}
+.pair .arch .in{position:absolute;left:14%;right:14%;top:57%;transform:translateY(-50%);color:var(--gold2);overflow:visible}
 .pair .arch .in span{display:block;font-family:'Cinzel',serif;letter-spacing:.2em;font-size:.62rem}
-.pair .arch .in em{display:block;font-style:normal;font-family:'Great Vibes',cursive;font-size:clamp(2.2rem,11vw,3rem);line-height:1.1}
-.pair h3{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(2.2rem,10vw,2.8rem);color:var(--maroon);margin-top:10px}
-.pair p{font-style:italic;font-size:1.05rem;line-height:1.5}
+.pair .arch .in em{display:block;margin-top:8px;white-space:nowrap;font-style:normal;font-family:'Great Vibes',cursive;font-size:clamp(2rem,9.5vw,2.7rem);line-height:1.35;
+ color:#f6d98e;text-shadow:0 0 6px rgba(255,214,130,.55),0 1px 0 #8a5a14;animation:archglow 2.8s ease-in-out infinite}
+@keyframes archglow{50%{color:#fff3cf;text-shadow:0 0 14px rgba(255,226,150,.95),0 0 26px rgba(255,200,100,.6),0 1px 0 #8a5a14}}
+.pair h3{display:none}
+.pair p{font-style:italic;font-size:1.02rem;line-height:1.45;margin-top:6px}
 
 /* ---------- scratch ---------- */
-.card{margin-top:30px;padding:30px 18px;background:#fffdf8;border:1px solid var(--gold2);box-shadow:0 20px 45px rgba(110,70,20,.12)}
+.card{margin-top:30px;padding:30px 18px;background:#fffdf8;border:1px solid var(--gold2)}
 .card .t2{font-family:'Cinzel',serif;font-weight:700;letter-spacing:.3em;font-size:1.25rem;color:var(--maroon);padding-left:.3em}
 .card .s2{font-style:italic;font-size:1.15rem;margin-top:6px}
 .scratch{position:relative;width:100%;max-width:330px;aspect-ratio:1.6;margin:18px auto 0;overflow:hidden;border-radius:6px;background:#fffaf0;border:1px solid var(--gold)}
@@ -190,7 +172,7 @@ section{padding:64px 0 10px}
 .gbtn:active{transform:translateY(3px);box-shadow:0 1px 0 #8a6420}
 
 /* ---------- garland divider ---------- */
-.toran{display:flex;justify-content:space-around;margin:56px -18px 0;position:relative;height:70px}
+.toran{display:flex;justify-content:space-around;margin:26px -18px 0;position:relative;height:70px}
 .toran::before{content:'';position:absolute;left:0;right:0;top:8px;height:24px;border-bottom:2px solid #8a6420;border-radius:0 0 50% 50%/0 0 100% 100%}
 .toran .h{display:flex;flex-direction:column;align-items:center;gap:1px;position:relative;margin-top:22px;animation:sway 3s ease-in-out infinite alternate;transform-origin:top}
 .toran .h i{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ffd36b,#f39a1e 60%,#c46a08)}
@@ -201,7 +183,7 @@ section{padding:64px 0 10px}
 @keyframes sway{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
 
 /* ---------- silk scrolls ---------- */
-.scroll{position:relative;width:88%;margin:46px auto 0}
+.scroll{position:relative;width:88%;margin:24px auto 0}
 .scroll .hook{width:2px;height:40px;margin:0 auto;background:var(--gold3);position:relative}
 .scroll .hook::before{content:'';position:absolute;top:-8px;left:-7px;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff0c0,#c49a45 60%,#7a5418)}
 .rod{position:relative;height:14px;margin:0 -6%;border-radius:7px;background:linear-gradient(180deg,#7a1424,#3e0812);box-shadow:0 3px 6px rgba(0,0,0,.3);z-index:2}
@@ -234,17 +216,22 @@ section{padding:64px 0 10px}
 .cnt{margin-top:18px;font-family:'Cinzel',serif;letter-spacing:.12em;font-size:.95rem}
 .cnt b{font-size:2.4rem;color:var(--maroon);letter-spacing:0;margin-right:6px}
 
-.fam{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;margin-top:14px;font-size:1.15rem}
-.fam .late{font-style:italic;opacity:.75}
-.fam1{font-size:1.35rem;margin-top:14px;color:var(--maroon)}
-footer{padding:60px 0 30px}
+.fam1{font-size:1.35rem;margin-top:12px;color:var(--maroon)}
+.elders{margin-top:14px;font-family:'Cinzel',serif;font-weight:700;letter-spacing:.16em;font-size:.78rem;color:#9c1446}
+footer{padding:34px 0 24px}
 .endphoto{position:relative;width:min(84vw,360px);margin:0 auto 26px;padding:10px;background:#fffdf8;border:1px solid var(--gold);box-shadow:0 0 0 6px var(--ivory),0 0 0 7px rgba(196,154,69,.5),0 24px 50px rgba(110,20,35,.22)}
 .endphoto .im{aspect-ratio:4/5;overflow:hidden}
 .endphoto img{width:100%;height:100%;object-fit:cover;object-position:center 35%;animation:kb 18s ease-in-out infinite alternate}
-footer .hash{display:inline-block;margin-top:18px;font-family:'Cinzel',serif;font-weight:700;letter-spacing:.18em;font-size:clamp(1.05rem,5vw,1.35rem);
+footer .hash{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px}
+footer .hash .hn{font-family:'Cinzel',serif;font-weight:700;letter-spacing:.16em;font-size:clamp(1.05rem,5vw,1.35rem);
  background:linear-gradient(100deg,#0b4f52 0%,#13827a 30%,#fff1c4 48%,#13827a 66%,#0b4f52 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
  filter:drop-shadow(0 2px 0 rgba(255,255,255,.5));animation:foil 5s linear infinite}
-footer .credit{margin-top:44px;font-family:'Cinzel',serif;letter-spacing:.35em;font-size:.62rem;color:var(--maroon)}
+footer .hash .hrt{position:relative;width:64px;height:58px;flex:none;display:flex;align-items:center;justify-content:center;animation:beat 1.4s ease-in-out infinite;
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 58'%3E%3Cdefs%3E%3ClinearGradient id='h' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff6b81'/%3E%3Cstop offset='.55' stop-color='%23c2185b'/%3E%3Cstop offset='1' stop-color='%237a0a32'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M32 56C14 42 2 32 2 18 2 9 9 2 18 2c6 0 11 3 14 8 3-5 8-8 14-8 9 0 16 7 16 16 0 14-12 24-30 38z' fill='url(%23h)' stroke='%23f3d58a' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat;
+ filter:drop-shadow(0 4px 8px rgba(160,20,60,.4))}
+footer .hash .hrt i{font-style:normal;font-family:'Great Vibes',cursive;font-size:1.25rem;color:#fff3d6;margin-top:-6px;text-shadow:0 1px 2px rgba(80,0,20,.6)}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.14)}30%{transform:scale(1)}45%{transform:scale(1.1)}}
+footer .credit{margin-top:28px;font-family:'Cinzel',serif;letter-spacing:.35em;font-size:.62rem;color:var(--maroon)}
 footer .brand{display:block;margin-top:6px;font-family:'Cinzel',serif;font-weight:700;letter-spacing:.3em;padding-left:.3em;font-size:clamp(1.8rem,9vw,2.4rem);
  background:linear-gradient(100deg,#4a0b16 0%,#a3123f 28%,#ff9f7a 45%,#ffe2a8 50%,#ff9f7a 55%,#a3123f 72%,#4a0b16 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
  filter:drop-shadow(0 3px 6px rgba(120,20,40,.3));animation:foil 4.5s linear infinite}
@@ -254,55 +241,83 @@ footer .brand{display:block;margin-top:6px;font-family:'Cinzel',serif;font-weigh
  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .42 0 0 0 0 .25 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
 #vign{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 120% 90% at 50% 40%,transparent 55%,rgba(150,60,30,.28) 100%)}
 #dust{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
-#dust i{position:absolute;width:4px;height:4px;border-radius:50%;background:radial-gradient(circle,#fff6d0,#d8ac52 60%,transparent 70%);box-shadow:0 0 6px 1px rgba(216,172,82,.55);animation:twinkle 4s ease-in-out infinite,drift 18s linear infinite}
+#dust i{position:absolute;width:4px;height:4px;border-radius:50%;background:radial-gradient(circle,#fff,#ffe6a8 55%,transparent 70%);box-shadow:0 0 8px 2px rgba(255,236,190,.9);animation:twinkle 4s ease-in-out infinite,drift 18s linear infinite}
 @keyframes twinkle{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:1;transform:scale(1.2)}}
 @keyframes drift{from{margin-top:0}to{margin-top:-60px}}
-section.lux{position:relative;margin:46px 0 0;padding:46px 20px 40px;background:linear-gradient(180deg,#fffdf9,#fffaf2);
- border:1px solid rgba(196,154,69,.75);box-shadow:inset 0 0 0 6px #fffdf9,inset 0 0 0 7px rgba(196,154,69,.4),0 24px 50px rgba(150,95,40,.13)}
+section.lux{position:relative;margin:26px 0 0;padding:32px 18px 28px;background:linear-gradient(180deg,#fffdf9,#fffaf2);border:1px solid rgba(196,154,69,.75)}
 section.lux::before,section.lux::after{content:'';position:absolute;width:46px;height:46px;pointer-events:none;
  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 46' fill='none' stroke='%23c49a45' stroke-width='1.3'%3E%3Cpath d='M2 30V2h28'/%3E%3Cpath d='M8 22V8h14'/%3E%3Cpath d='M8 8c6 0 10 4 10 10'/%3E%3Ccircle cx='8' cy='8' r='2.4' fill='%23c49a45'/%3E%3C/svg%3E") no-repeat}
 section.lux::before{top:-1px;left:-1px}
 section.lux::after{bottom:-1px;right:-1px;transform:rotate(180deg)}
-.kicker{background:linear-gradient(100deg,#a87a2c 0%,#d9b25e 30%,#fff1c4 45%,#d9b25e 60%,#a87a2c 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:foil 6s linear infinite}
+section.lux,.card{box-shadow:inset 0 0 0 6px #fffdf9,inset 0 0 0 7px rgba(196,154,69,.4),0 0 40px rgba(255,236,200,.5),0 26px 55px rgba(140,60,30,.28)}
 @keyframes foil{from{background-position:120% 0}to{background-position:-120% 0}}
 .title::after{content:'';display:block;width:120px;height:12px;margin:12px auto 0;
  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'%3E%3Cpath d='M0 6h48M72 6h48' stroke='%23c49a45' stroke-width='1'/%3E%3Cpath d='M60 1l5 5-5 5-5-5z' fill='%23c49a45'/%3E%3Ccircle cx='50' cy='6' r='1.6' fill='%23c49a45'/%3E%3Ccircle cx='70' cy='6' r='1.6' fill='%23c49a45'/%3E%3C/svg%3E") center/contain no-repeat}
-.card{border:1px solid rgba(196,154,69,.75);box-shadow:inset 0 0 0 6px #fffdf8,inset 0 0 0 7px rgba(196,154,69,.4),0 24px 50px rgba(150,95,40,.13)}
 
-/* ---------- PREMIUM OM ---------- */
-.omw{position:relative;width:min(78vw,310px);aspect-ratio:1;margin-top:30px}
+/* ---------- WOW script colours ---------- */
+.kicker,.hero .kick{background:linear-gradient(100deg,#6d0a2e 0%,#b5124a 25%,#e8476a 40%,#ffd88a 50%,#e8476a 60%,#b5124a 75%,#6d0a2e 100%);background-size:260% 100%;
+ -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(255,255,255,.55)) drop-shadow(0 4px 10px rgba(140,20,60,.25));animation:foil 5s linear infinite}
+footer .kicker{font-size:clamp(2.3rem,10.5vw,3rem)}
+
+/* ---------- PREMIUM OM (gold ॐ on maroon medallion) ---------- */
+.omw{position:relative;width:min(70vw,280px);aspect-ratio:1;margin-top:18px}
 .omw .rays{position:absolute;inset:-14%;border-radius:50%;
- background:repeating-conic-gradient(from 0deg,transparent 0 5deg,rgba(232,180,80,.45) 5deg 6deg);
+ background:repeating-conic-gradient(from 0deg,transparent 0 5deg,rgba(150,90,30,.35) 5deg 6deg);
  -webkit-mask:radial-gradient(circle,#000 22%,transparent 68%);mask:radial-gradient(circle,#000 22%,transparent 68%);animation:spin 50s linear infinite}
 .omw svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .omw .r1{animation:spin 70s linear infinite}
 .omw .r2{animation:spin 45s linear infinite reverse}
-.omw .glow{position:absolute;inset:20%;border-radius:50%;
- background:radial-gradient(circle,#fffdf0 0%,#ffeeb8 30%,rgba(246,200,110,.45) 58%,transparent 72%);animation:breathe 3.6s ease-in-out infinite}
-@keyframes breathe{50%{transform:scale(1.12);filter:brightness(1.12)}}
-.omw .om{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:6%;
- font-family:'Noto Serif Devanagari',serif;font-weight:700;font-size:clamp(5.4rem,27vw,7.6rem);line-height:1;
- background:linear-gradient(115deg,#b07a22 15%,#e0b250 35%,#fff7d6 50%,#e0b250 65%,#b07a22 85%);background-size:260% 100%;
+.omw .glow{position:absolute;inset:22%;border-radius:50%;
+ background:radial-gradient(circle at 50% 40%,#9c1a36 0%,#6e1023 55%,#3e0610 100%);
+ box-shadow:0 0 0 3px #e9c46a,0 0 0 6px #6e1023,0 0 0 7px #e9c46a,0 0 30px 10px rgba(255,214,130,.65),0 14px 30px rgba(80,10,20,.45);animation:breathe 3.6s ease-in-out infinite}
+@keyframes breathe{50%{box-shadow:0 0 0 3px #e9c46a,0 0 0 6px #6e1023,0 0 0 7px #e9c46a,0 0 46px 18px rgba(255,214,130,.85),0 14px 30px rgba(80,10,20,.45)}}
+.omw .om{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:4%;
+ font-family:'Noto Serif Devanagari',serif;font-weight:700;font-size:clamp(4.4rem,22vw,6.2rem);line-height:1;
+ background:linear-gradient(115deg,#c9952f 15%,#f3d58a 35%,#fffaf0 50%,#f3d58a 65%,#c9952f 85%);background-size:260% 100%;
  -webkit-background-clip:text;background-clip:text;color:transparent;
- filter:drop-shadow(0 0 14px rgba(255,205,100,.85)) drop-shadow(0 3px 1px rgba(110,60,10,.35));animation:shine 3.8s linear infinite}
+ filter:drop-shadow(0 0 10px rgba(255,214,130,.7)) drop-shadow(0 3px 2px rgba(0,0,0,.45));animation:shine 3.8s linear infinite}
 .omw .orbit{position:absolute;inset:4%;animation:spin 14s linear infinite}
 .omw .orbit.o2{inset:16%;animation-duration:9s;animation-direction:reverse}
 .omw .orbit i{position:absolute;width:7px;height:7px;border-radius:50%;background:#fffbe6;box-shadow:0 0 10px 4px rgba(255,205,100,.95)}
 .omw .orbit i:nth-child(1){top:-3px;left:50%}
 .omw .orbit i:nth-child(2){bottom:12%;left:6%;width:5px;height:5px}
 .omw .orbit i:nth-child(3){top:40%;right:-3px;width:4px;height:4px}
-/* ---------- WOW script colours ---------- */
-.kicker,.hero .kick{background:linear-gradient(100deg,#6d0a2e 0%,#b5124a 25%,#e8476a 40%,#ffd88a 50%,#e8476a 60%,#b5124a 75%,#6d0a2e 100%);background-size:260% 100%;
- -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(255,255,255,.55)) drop-shadow(0 4px 10px rgba(140,20,60,.25));animation:foil 5s linear infinite}
-body.heroin .hero .kick{animation:up 1.3s cubic-bezier(.2,.8,.2,1) 1.5s forwards,foil 5s linear infinite}
-footer .kicker{font-size:clamp(2.3rem,10.5vw,3rem)}
-#dust i{background:radial-gradient(circle,#fff,#ffe6a8 55%,transparent 70%);box-shadow:0 0 8px 2px rgba(255,236,190,.9)}
-section.lux,.card{box-shadow:inset 0 0 0 6px #fffdf9,inset 0 0 0 7px rgba(196,154,69,.4),0 0 40px rgba(255,236,200,.5),0 26px 55px rgba(140,60,30,.28)}
+
 /* ---------- Sri Ganeshaya Namaha (one line) ---------- */
-.hero .invo{display:block;width:100%;padding:62px 6px 0;text-align:center;font-family:'Cinzel',serif;font-weight:700;letter-spacing:.14em;font-size:clamp(.8rem,3.8vw,1.02rem);
+.hero .invo{display:block;width:100%;padding:58px 6px 0;text-align:center;font-family:'Cinzel',serif;font-weight:700;letter-spacing:.14em;font-size:clamp(.8rem,3.8vw,1.02rem);
  background:linear-gradient(100deg,#6d0a2e 0%,#b5124a 30%,#ffd88a 50%,#b5124a 70%,#6d0a2e 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .invo.te{font-family:'Noto Serif Telugu',serif;letter-spacing:0}
 body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,foil 5s linear infinite}
+
+/* ---------- LAGNA PATRIKA reveal ---------- */
+.patrika{position:relative;width:min(88vw,370px);margin-top:18px}
+body.heroin .hero .patrika{animation-delay:1.3s}
+.pcard{position:relative;padding:8px;background:#fffaf0;border:2px solid #7a1028;
+ box-shadow:inset 0 0 0 4px #fffaf0,inset 0 0 0 5px #c49a45,0 0 40px rgba(255,236,200,.6),0 24px 50px rgba(110,20,35,.3);
+ clip-path:inset(50% 0 50% 0);transition:clip-path 1.7s cubic-bezier(.6,0,.2,1)}
+body.patopen .pcard{clip-path:inset(0 0 0 0)}
+.pin{position:relative;padding:16px 4px 14px;border:1px solid rgba(196,154,69,.7);
+ background:radial-gradient(ellipse at 50% 30%,#fffdf6,#fbefd9 80%),#fffaf0}
+.pin::before,.pin::after{content:'';position:absolute;width:40px;height:40px;pointer-events:none;
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 46' fill='none' stroke='%237a1028' stroke-width='1.4'%3E%3Cpath d='M2 30V2h28'/%3E%3Cpath d='M8 22V8h14'/%3E%3Cpath d='M8 8c6 0 10 4 10 10'/%3E%3Ccircle cx='8' cy='8' r='2.6' fill='%23c49a45'/%3E%3C/svg%3E") no-repeat}
+.pin::before{top:3px;left:3px}.pin::after{bottom:3px;right:3px;transform:rotate(180deg)}
+.pin>*{opacity:0;transform:translateY(12px);transition:opacity .9s ease,transform .9s ease}
+body.patopen .pin>*{opacity:1;transform:none}
+body.patopen .pin>*:nth-child(1){transition-delay:1s}body.patopen .pin>*:nth-child(2){transition-delay:1.2s}
+body.patopen .pin>*:nth-child(3){transition-delay:1.4s}body.patopen .pin>*:nth-child(4){transition-delay:1.7s}
+body.patopen .pin>*:nth-child(5){transition-delay:2s}body.patopen .pin>*:nth-child(6){transition-delay:2.2s}
+body.patopen .pin>*:nth-child(7){transition-delay:2.5s}
+.pin .kick{margin-top:6px}
+.pdots{display:flex;justify-content:center;gap:10px;margin:2px 0}
+.pdots i{width:9px;height:9px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ff6b6b,#c8102e 70%)}
+.pdots i:nth-child(2){background:radial-gradient(circle at 35% 35%,#ffe27a,#e5a400 70%)}
+.prod{position:absolute;left:-5%;right:-5%;height:16px;margin-top:-8px;border-radius:8px;z-index:3;
+ background:linear-gradient(180deg,#a3203a,#5a0a1c 60%,#3a0610);box-shadow:0 4px 8px rgba(0,0,0,.35);top:50%;transition:top 1.7s cubic-bezier(.6,0,.2,1)}
+.prod::before,.prod::after{content:'';position:absolute;top:-7px;width:30px;height:30px;border-radius:50%;
+ background:radial-gradient(circle at 38% 35%,#fff3c4,#e0b250 45%,#7a5418);box-shadow:0 3px 6px rgba(0,0,0,.35)}
+.prod::before{left:-18px}.prod::after{right:-18px}
+body.patopen .prod.top{top:0}
+body.patopen .prod.bot{top:100%}
 @media (prefers-reduced-motion:reduce){*{animation-duration:0s!important;transition-duration:.3s!important}}
 </style>
 </head>
@@ -317,36 +332,27 @@ body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,
   <linearGradient id="gStone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf1dc"/><stop offset="1" stop-color="#e8d6b2"/></linearGradient>
   <linearGradient id="gWine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a0d1b"/><stop offset="1" stop-color="#3a0610"/></linearGradient>
   <symbol id="arch" viewBox="0 0 200 270">
-   <!-- kalasam -->
    <circle cx="100" cy="10" r="5" fill="url(#gGold)"/>
    <path d="M92 16h16l-3 6h-10z" fill="url(#gGold)"/>
    <ellipse cx="100" cy="30" rx="13" ry="10" fill="url(#gGold)"/>
-   <!-- lotus crown -->
    <path d="M70 58c8-16 20-20 30-20s22 4 30 20c-10-4-20-6-30-6s-20 2-30 6z" fill="url(#gStone)" stroke="#c49a45" stroke-width="1.2"/>
    <path d="M86 52c2-10 8-14 14-14s12 4 14 14" fill="none" stroke="#c49a45"/>
-   <!-- outer arch + pillars -->
    <path d="M18 238V118C18 70 56 50 100 50s82 20 82 68v120z" fill="url(#gStone)" stroke="url(#gGold)" stroke-width="3"/>
    <path d="M28 236V120c0-40 32-58 72-58s72 18 72 58v116" fill="none" stroke="#c49a45" stroke-width="1.2" stroke-dasharray="3 3"/>
-   <!-- beads on arch -->
    <g fill="url(#gGold)"><circle cx="40" cy="96" r="3"/><circle cx="58" cy="76" r="3"/><circle cx="78" cy="66" r="3"/><circle cx="100" cy="62" r="3.4"/><circle cx="122" cy="66" r="3"/><circle cx="142" cy="76" r="3"/><circle cx="160" cy="96" r="3"/></g>
-   <!-- peacocks / scroll ears -->
    <path d="M18 128c-14 0-16 18-4 20M182 128c14 0 16 18 4 20" fill="none" stroke="url(#gGold)" stroke-width="4" stroke-linecap="round"/>
-   <!-- inner door -->
    <path d="M42 232V124c0-34 26-50 58-50s58 16 58 50v108z" fill="url(#gWine)" stroke="url(#gGold)" stroke-width="3"/>
-   <!-- pillar carvings -->
    <g stroke="#c49a45" stroke-width="1" fill="none"><path d="M30 140h8M30 160h8M30 180h8M30 200h8M30 220h8M162 140h8M162 160h8M162 180h8M162 200h8M162 220h8"/></g>
-   <!-- bells -->
    <g><path d="M10 128v40M190 128v40" stroke="#9a7428" stroke-width="1.2"/>
     <path d="M4 180c0-10 3-14 6-14s6 4 6 14z" fill="url(#gGold)"/><path d="M184 180c0-10 3-14 6-14s6 4 6 14z" fill="url(#gGold)"/>
     <circle cx="10" cy="182" r="2" fill="#7a5418"/><circle cx="190" cy="182" r="2" fill="#7a5418"/></g>
-   <!-- base plinth -->
    <path d="M10 236h180l-8 14H18z" fill="url(#gStone)" stroke="url(#gGold)" stroke-width="2"/>
    <path d="M22 250h156l-10 12H32z" fill="url(#gGold)"/>
   </symbol>
  </defs>
 </svg>
 
-<!-- ===== STEP 1 : GOD ENTRY ===== -->
+<!-- ===== STEP 1 : ENTRY (invitation2 image4 = hands & lotus) ===== -->
 <div id="cover">
   <div class="god">
     <div class="card2">
@@ -354,8 +360,8 @@ body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,
       <svg class="lb" viewBox="0 0 120 60" fill="none" stroke="#c49a45" stroke-width="1.6"><path d="M60 6c8 10 8 26 0 38c-8-12-8-28 0-38z"/><path d="M60 44c-6-12-18-20-30-20c4 12 16 20 30 20zM60 44c6-12 18-20 30-20c-4 12-16 20-30 20z"/><path d="M60 44c-12-6-26-6-40 0c12 8 28 8 40 0zM60 44c12-6 26-6 40 0c-12 8-28 8-40 0z"/><path d="M8 52h104" stroke-width="1"/><circle cx="60" cy="52" r="2.5" fill="#c49a45"/></svg>
       <div class="beam"></div>
     </div>
-    <div class="half l"><img src="invitation2 image1.jpeg" alt=""></div>
-    <div class="half r"><img src="invitation2 image1.jpeg" alt=""></div>
+    <div class="half l"><img src="invitation2 image4.png" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='invitation2 image4.jpeg'}else if(this.dataset.t==1){this.dataset.t=2;this.src='invitation2 image4.jpg'}else{this.onerror=null;this.src='invitation2 image1.jpeg'}"></div>
+    <div class="half r"><img src="invitation2 image4.png" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='invitation2 image4.jpeg'}else if(this.dataset.t==1){this.dataset.t=2;this.src='invitation2 image4.jpg'}else{this.onerror=null;this.src='invitation2 image1.jpeg'}"></div>
     <div class="shade"></div>
     <div class="seam"></div>
     <div class="cap">
@@ -370,7 +376,6 @@ body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,
 <audio id="bgm" src="invitation2.mpeg" loop preload="auto"></audio>
 
 <main>
-  <!-- HERO : Sri Ganeshaya Namaha + blessings + ॐ + shining names -->
   <section class="hero" id="hero">
     <div class="invo" id="invo">॥ SRI GANESHAYA NAMAHA ॥</div>
     <div class="brow" id="brow"><span>SRIRASTHU</span><span>SUBHAMASTHU</span><span>AVIGHNAMASTHU</span></div>
@@ -384,12 +389,20 @@ body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,
       <div class="orbit o2"><i></i><i></i></div>
     </div>
     <p class="tag s1" data-en="WRITTEN BY DESTINY, BLESSED BY SHIVA & PARVATI" data-te="విధి రాసిన బంధం, శివపార్వతుల ఆశీస్సులతో">WRITTEN BY DESTINY,<br>BLESSED BY SHIVA &amp; PARVATI</p>
-    <p class="kick s2">Vivaha Mahotsavam</p>
-    <p class="tsub s3">వివాహ మహోత్సవం</p>
-    <h1 class="nm n1">Akhil</h1>
-    <p class="amp">&amp;</p>
-    <h1 class="nm n2">Shivani</h1>
-    <p class="hint2" data-en="Tap the names to shower akshinthalu 🌾" data-te="అక్షింతలు వేయడానికి పేర్లను నొక్కండి 🌾">Tap the names to shower akshinthalu 🌾</p>
+    <div class="patrika" id="patrika">
+      <span class="prod top"></span>
+      <div class="pcard"><div class="pin">
+        <p class="pdots"><i></i><i></i><i></i></p>
+        <p class="kick">Vivaha Mahotsavam</p>
+        <p class="tsub">వివాహ మహోత్సవం</p>
+        <h1 class="nm">Akhil</h1>
+        <p class="amp">&amp;</p>
+        <h1 class="nm">Shivani</h1>
+        <p class="pdots"><i></i><i></i><i></i></p>
+      </div></div>
+      <span class="prod bot"></span>
+    </div>
+    <p class="hint2" data-en="Tap on Akhil & Shivani to shower akshinthalu (blessing rice) 🌾" data-te="అక్షింతలు వేయడానికి వధూవరుల పేర్లను నొక్కండి 🌾">Tap on Akhil &amp; Shivani to shower akshinthalu (blessing rice) 🌾</p>
     <div class="orb" id="orb"></div>
     <p class="stxt">SCROLL DOWN</p>
     <div class="ember"></div>
@@ -400,7 +413,7 @@ body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,
     <div class="vista"><img src="invitation2 image2.jpeg" alt="Function hall"></div>
   </section>
 
-  <!-- SAVE THE DATE (scratch first) -->
+  <!-- SAVE THE DATE -->
   <section class="rv">
     <div class="card" style="margin-top:0">
       <p class="t2" data-en="SAVE THE DATE" data-te="తేదీ గుర్తుంచుకోండి">SAVE THE DATE</p>
@@ -411,7 +424,7 @@ body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,
     </div>
   </section>
 
-  <!-- COUNTDOWN (hidden until date is opened) -->
+  <!-- COUNTDOWN -->
   <section class="rv">
     <p class="kicker" data-en="The auspicious moment" data-te="శుభ ముహూర్తం">The auspicious moment</p>
     <p class="title" data-en="COUNTDOWN" data-te="ఇంకా కొద్ది రోజులే">COUNTDOWN</p>
@@ -436,7 +449,6 @@ body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,
     <p class="honor" style="margin-top:14px">CHI.LA.SOW.</p>
     <p class="big">Shivani</p>
     <p class="par">(Eldest D/o. Smt. Kusam Praveena &amp; Sri. Prabhakar)</p>
-
     <div class="frame"><div>
       <p class="lab">SUMUHURTHAM</p>
       <p class="day secret">SUNDAY · 22<sup>ND</sup> NOVEMBER 2026</p>
@@ -446,7 +458,7 @@ body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,
     </div></div>
   </section>
 
-  <!-- BRIDE & GROOM -->
+  <!-- THE COUPLE -->
   <section class="rv lux">
     <p class="kicker" data-en="Two hearts, one journey" data-te="రెండు హృదయాలు, ఒకే ప్రయాణం">Two hearts, one journey</p>
     <p class="title" data-en="THE COUPLE" data-te="వధూవరులు">THE COUPLE</p>
@@ -459,7 +471,7 @@ body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,
     <div class="toran" id="toran"></div>
   </section>
 
-  <!-- FESTIVITIES : silk scrolls -->
+  <!-- FESTIVITIES -->
   <section style="padding-top:30px">
     <p class="kicker rv" data-en="Join the celebrations" data-te="వేడుకలలో పాల్గొనండి">Join the celebrations</p>
     <p class="title rv" data-en="FESTIVITIES" data-te="వేడుకలు">FESTIVITIES</p>
@@ -500,17 +512,18 @@ body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,
     <p class="cnt"><b id="count">0</b>BLESSINGS SHOWERED</p>
   </section>
 
-  <!-- FAMILY -->
+  <!-- INVITED BY -->
   <section class="rv lux">
     <p class="kicker" data-en="With love from" data-te="ప్రేమతో">With love from</p>
     <p class="title" data-en="INVITED BY" data-te="ఆహ్వానించువారు">INVITED BY</p>
     <p class="fam1">Smt. Bandari Kalpana &amp; Sri. Raj Kumar</p>
+    <p class="elders" data-en="WITH THE BLESSINGS OF OUR ELDERS" data-te="పెద్దల ఆశీస్సులతో">WITH THE BLESSINGS OF OUR ELDERS</p>
   </section>
 
   <footer class="rv">
     <div class="endphoto"><div class="im"><img src="invitation2 image3.jpeg" alt="Akhil and Shivani"></div></div>
     <p class="kicker" data-en="Your presence is our greatest blessing" data-te="మీ రాకే మాకు ఆశీర్వాదం">Your presence is our greatest blessing</p>
-    <p class="hash">#AKHILWEDSSHIVANI</p>
+    <p class="hash"><span class="hn">AKHIL</span><span class="hrt"><i>weds</i></span><span class="hn">SHIVANI</span></p>
     <p class="credit">CRAFTED WITH LOVE BY</p><span class="brand">UNSAID</span>
   </footer>
 </main>
@@ -522,20 +535,20 @@ function startSong(){bgmEl.volume=.85;try{bgmEl.currentTime=0}catch(e){}bgmEl.pl
 
 /* ===== EDIT THESE ===== */
 const WEDDING_TIME='2026-11-22T09:40:00+05:30';
-const WHATSAPP_NUMBER='917893271826'; // family number: 91 + number, no + or spaces
+const WHATSAPP_NUMBER='917893271826';
 
-/* peacock-style mandala icon */
+/* mandala icon */
 (function(){let s='';const cols=['#1f5f7a','#2a7f8f','#3a8f6f','#c49a45'];
  [[10,10,5],[16,20,6],[22,31,7],[30,42,6]].forEach(([n,r,l],k)=>{for(let i=0;i<n;i++)s+=`<g transform="rotate(${360/n*i})"><ellipse cx="0" cy="${-r}" rx="${l*.45}" ry="${l}" fill="${cols[k]}" opacity=".9"/><circle cx="0" cy="${-r}" r="${l*.22}" fill="#0e3550"/></g>`});
  document.getElementById('mic').innerHTML=s+'<circle r="5" fill="#c49a45"/>'})();
 
 /* om mandala rings */
-(function(){let a='<defs><linearGradient id="omg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc94"/><stop offset=".5" stop-color="#c49a45"/><stop offset="1" stop-color="#8a6420"/></linearGradient></defs>';
+(function(){let a='<defs><linearGradient id="omg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b8862e"/><stop offset=".5" stop-color="#8a5a14"/><stop offset="1" stop-color="#6e1423"/></linearGradient></defs>';
  a+='<circle r="47" fill="none" stroke="url(#omg)" stroke-width=".5"/><circle r="36" fill="none" stroke="url(#omg)" stroke-width=".35"/>';
- for(let i=0;i<24;i++)a+=`<g transform="rotate(${i*15})"><path d="M0 -46 C3 -42 3 -39 0 -37 C-3 -39 -3 -42 0 -46Z" fill="none" stroke="url(#omg)" stroke-width=".6"/><circle cy="-48.5" r=".9" fill="#c49a45"/></g>`;
+ for(let i=0;i<24;i++)a+=`<g transform="rotate(${i*15})"><path d="M0 -46 C3 -42 3 -39 0 -37 C-3 -39 -3 -42 0 -46Z" fill="none" stroke="url(#omg)" stroke-width=".6"/><circle cy="-48.5" r=".9" fill="#6e1423"/></g>`;
  document.getElementById('omr1').innerHTML=a;
- let b='<circle r="41.5" fill="none" stroke="#c49a45" stroke-width=".3" stroke-dasharray="1 1.6"/>';
- for(let i=0;i<12;i++)b+=`<g transform="rotate(${i*30})"><path d="M0 -40 L1.6 -37.5 L0 -35 L-1.6 -37.5Z" fill="#d8ac52"/></g>`;
+ let b='<circle r="41.5" fill="none" stroke="#8a5a14" stroke-width=".35" stroke-dasharray="1 1.6"/>';
+ for(let i=0;i<12;i++)b+=`<g transform="rotate(${i*30})"><path d="M0 -40 L1.6 -37.5 L0 -35 L-1.6 -37.5Z" fill="#8a1530"/></g>`;
  document.getElementById('omr2').innerHTML=b})();
 
 /* gold dust */
@@ -557,7 +570,7 @@ function shower(n,cols,rice){for(let i=0;i<n;i++)add({y:-20-R()*H*.6,vy:2+R()*3,
   ctx.ellipse(0,0,p.r*(p.rice?2.2:1.4),p.r*(p.rice?.9:.6),0,0,7);ctx.fill();ctx.restore()}
  requestAnimationFrame(loop)})();
 
-/* STEP 1 : god opens from the middle */
+/* STEP 1 : doors open + song */
 const bgm=document.getElementById('bgm'),mb=document.getElementById('music'),cover=document.getElementById('cover'),hero=document.getElementById('hero');
 const RICE=['#fff8e0','#f7ecc8','#ffd84a','#f39a1e','#e8455a'];
 let rainTimer=null;
@@ -565,8 +578,9 @@ cover.addEventListener('click',()=>{
   cover.classList.add('open');document.body.classList.add('opened');
   startSong();
   setTimeout(()=>shower(70,['#f2a7b5','#f5c242','#fbe3e8','#f39a1e']),500);
-  /* STEP 2 : hero appears, names shine, akshinthalu fall */
   setTimeout(()=>{cover.classList.add('gone');document.body.classList.remove('locked');window.scrollTo(0,0);document.body.classList.add('heroin')},1900);
+  /* lagna patrika opens and reveals Vivaha Mahotsavam + names */
+  setTimeout(()=>document.body.classList.add('patopen'),3400);
   setTimeout(()=>{shower(120,RICE,true);rainTimer=setInterval(()=>shower(12,RICE,true),800);setTimeout(()=>{clearInterval(rainTimer);ambient=true},7000)},4000);
   setTimeout(()=>cover.remove(),3000);
 },{once:true});
