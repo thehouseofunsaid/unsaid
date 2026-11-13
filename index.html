@@ -4,17 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Akhil & Shivani · Wedding Invitation</title>
-<meta name="theme-color" content="#6e1423">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Noto+Serif+Telugu:wght@500;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#eeb48a">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Noto+Serif+Telugu:wght@500;700&family=Noto+Serif+Devanagari:wght@700&display=swap" rel="stylesheet">
 <style>
-:root{--ivory:#fbf5ea;--cream:#f6ecdc;--gold:#c49a45;--gold2:#ecd08a;--gold3:#9a7428;--maroon:#6e1423;--wine:#4a0b16;--text:#4a2a1a}
+:root{--ivory:#f8eee2;--cream:#f6ecdc;--gold:#c49a45;--gold2:#ecd08a;--gold3:#9a7428;--maroon:#6e1423;--wine:#4a0b16;--text:#4a2a1a;--bg:#efb88e}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
-body{font-family:'Cormorant Garamond',serif;color:var(--text);background:var(--ivory);overflow-x:hidden}
+body{font-family:'Cormorant Garamond',serif;color:var(--text);background:var(--bg);overflow-x:hidden}
 body.locked{overflow:hidden;height:100vh}
 .te{font-family:'Noto Serif Telugu',serif}
 #paper{position:fixed;inset:0;z-index:0;pointer-events:none;
- background:radial-gradient(ellipse 70% 40% at 15% 20%,rgba(236,208,138,.18),transparent 70%),radial-gradient(ellipse 60% 40% at 90% 75%,rgba(232,170,150,.14),transparent 70%),linear-gradient(180deg,#fcf7ee,#f7eedf)}
+ background:
+ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'%3E%3Cg fill='none' stroke='%23a8742a' stroke-opacity='.18' stroke-width='1'%3E%3Cpath d='M45 8c9 12 9 25 0 37c-9-12-9-25 0-37z'/%3E%3Cpath d='M45 45c12-9 25-9 37 0c-12 9-25 9-37 0zM45 45c-12-9-25-9-37 0c12 9 25 9 37 0z'/%3E%3Cpath d='M45 45c9 12 9 25 0 37c-9-12-9-25 0-37z'/%3E%3Ccircle cx='45' cy='45' r='3'/%3E%3C/g%3E%3C/svg%3E"),
+ radial-gradient(ellipse 70% 35% at 50% 0%,rgba(255,236,205,.75),transparent 70%),
+ radial-gradient(ellipse 60% 40% at 0% 60%,rgba(226,128,96,.35),transparent 70%),
+ radial-gradient(ellipse 60% 40% at 100% 85%,rgba(226,128,96,.35),transparent 70%),
+ linear-gradient(165deg,#f8d3ad 0%,#efb88e 40%,#f4c49c 70%,#e9a67e 100%)}
+#sheen{position:fixed;inset:0;z-index:1;pointer-events:none;mix-blend-mode:soft-light;
+ background:linear-gradient(115deg,transparent 35%,rgba(255,248,230,.95) 48%,rgba(255,255,255,1) 50%,rgba(255,248,230,.95) 52%,transparent 65%);background-size:300% 300%;animation:sheen 7s ease-in-out infinite}
+@keyframes sheen{0%{background-position:120% 0}60%,100%{background-position:-60% 0}}
 #fx{position:fixed;inset:0;z-index:65;pointer-events:none}
 
 /* ---------- headings ---------- */
@@ -72,15 +80,15 @@ body.heroin .hero>*{animation:up 1.3s cubic-bezier(.2,.8,.2,1) forwards}
 body.heroin .hero .art{animation:artIn 1.8s ease forwards}
 @keyframes artIn{from{opacity:0;transform:translateY(-30px) scale(1.04)}to{opacity:1;transform:none}}
 .hero .art img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 18%;animation:kb 16s ease-in-out infinite alternate}
-.hero .brow{display:flex;justify-content:space-between;gap:10px;width:100%;padding:64px 6px 0;font-family:'Cinzel',serif;font-weight:600;letter-spacing:.06em;font-size:clamp(.6rem,2.9vw,.85rem);color:var(--maroon)}
+.hero .brow{display:flex;justify-content:space-between;gap:10px;width:100%;padding:12px 6px 0;font-family:'Cinzel',serif;font-weight:600;letter-spacing:.06em;font-size:clamp(.6rem,2.9vw,.85rem);color:var(--maroon)}
 .hero .brow.te{font-family:'Noto Serif Telugu',serif;letter-spacing:0}
 body.heroin .hero .brow{animation-delay:.3s}
 .hero .halo{width:min(70vw,280px);aspect-ratio:1;margin-top:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
  background:radial-gradient(circle,#fff8e0 0%,rgba(246,220,148,.55) 40%,transparent 70%);box-shadow:inset 0 0 0 1px rgba(196,154,69,.5),0 0 0 14px rgba(196,154,69,.08),0 0 0 15px rgba(196,154,69,.35);
  font-size:6rem;color:var(--gold);text-shadow:0 0 30px rgba(236,190,90,.9)}
 .hero .tag{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.22em;font-size:clamp(.82rem,3.9vw,1.05rem);line-height:1.9;color:var(--maroon);margin-top:16px;padding-left:.22em}
-.hero .kick{font-family:'Great Vibes',cursive;font-size:clamp(2.3rem,10vw,3rem);color:var(--gold);margin-top:10px;line-height:1.1}
-.hero .tsub{font-family:'Noto Serif Telugu',serif;font-weight:700;color:var(--gold3);font-size:.95rem;margin-top:2px}
+.hero .kick{font-family:'Great Vibes',cursive;font-size:clamp(2.8rem,12.5vw,3.6rem);margin-top:10px;line-height:1.15;padding:0 6px}
+.hero .tsub{font-family:'Noto Serif Telugu',serif;font-weight:700;color:#9c1446;font-size:.95rem;margin-top:2px}
 .hero .nm{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(4.6rem,22vw,6.4rem);line-height:1.08;cursor:pointer;
  background:linear-gradient(110deg,#6e1423 32%,#b8862e 43%,#fff4cc 50%,#b8862e 57%,#6e1423 68%);background-size:280% 100%;
  -webkit-background-clip:text;background-clip:text;color:transparent}
@@ -93,9 +101,9 @@ body.heroin .hero .nm{animation:up 1.3s cubic-bezier(.2,.8,.2,1) forwards,shine 
 body.heroin .hero .orb{animation:up 1.3s ease forwards,bob 2.2s ease-in-out 3s infinite,orbGlow 2.2s ease-in-out 3s infinite}
 @keyframes bob{50%{transform:translateY(10px)}}
 @keyframes orbGlow{50%{box-shadow:0 0 50px 22px rgba(255,214,120,.7)}}
-.hero .stxt{font-family:'Cinzel',serif;letter-spacing:.35em;font-size:.6rem;color:var(--gold3);margin-top:14px}
+.hero .stxt{font-family:'Cinzel',serif;letter-spacing:.35em;font-size:.6rem;color:var(--maroon);margin-top:14px}
 .hero .ember{position:absolute;left:0;right:0;bottom:0;height:150px;pointer-events:none;opacity:1;
- background:radial-gradient(ellipse 30% 70% at 20% 100%,rgba(255,150,60,.35),transparent 70%),radial-gradient(ellipse 35% 80% at 55% 100%,rgba(255,180,80,.4),transparent 70%),radial-gradient(ellipse 30% 70% at 85% 100%,rgba(255,140,50,.3),transparent 70%),linear-gradient(180deg,transparent,rgba(247,225,190,.6));
+ background:radial-gradient(ellipse 30% 70% at 20% 100%,rgba(255,150,60,.35),transparent 70%),radial-gradient(ellipse 35% 80% at 55% 100%,rgba(255,180,80,.4),transparent 70%),radial-gradient(ellipse 30% 70% at 85% 100%,rgba(255,140,50,.3),transparent 70%);
  animation:flick 2.6s ease-in-out infinite alternate}
 @keyframes flick{0%{filter:brightness(1)}50%{filter:brightness(1.15) saturate(1.2)}100%{filter:brightness(.92)}}
 body.heroin .hero .s1{animation-delay:1.2s}body.heroin .hero .s2{animation-delay:1.5s}body.heroin .hero .s3{animation-delay:1.7s}
@@ -138,7 +146,7 @@ section{padding:64px 0 10px}
 .vista{position:relative;margin:0 -18px;height:70vh;min-height:420px;overflow:hidden}
 .vista img{width:100%;height:100%;object-fit:cover;object-position:center 55%;animation:kb 20s ease-in-out infinite alternate}
 .vista .miss{width:100%;height:100%;background:linear-gradient(180deg,#f3c58a 0%,#e9a07a 35%,#c86a5a 55%,#7a2a2a 100%)}
-.vista::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,var(--ivory) 0%,transparent 14%,transparent 72%,var(--ivory) 100%)}
+.vista::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#f6cba5 0%,transparent 14%,transparent 72%,#f0b990 100%)}
 
 /* ---------- invitation ---------- */
 .lead{font-family:'Cinzel',serif;font-size:clamp(.82rem,3.8vw,1rem);letter-spacing:.08em;line-height:1.85;color:var(--text);margin-top:6px}
@@ -233,13 +241,73 @@ footer{padding:60px 0 30px}
 .endphoto{position:relative;width:min(84vw,360px);margin:0 auto 26px;padding:10px;background:#fffdf8;border:1px solid var(--gold);box-shadow:0 0 0 6px var(--ivory),0 0 0 7px rgba(196,154,69,.5),0 24px 50px rgba(110,20,35,.22)}
 .endphoto .im{aspect-ratio:4/5;overflow:hidden}
 .endphoto img{width:100%;height:100%;object-fit:cover;object-position:center 35%;animation:kb 18s ease-in-out infinite alternate}
-footer .hash{font-family:'Cinzel',serif;letter-spacing:.3em;color:var(--gold3);margin-top:14px}
-footer small{display:block;margin-top:40px;font-family:'Cinzel',serif;letter-spacing:.3em;font-size:.6rem;color:var(--gold3)}
+footer .hash{display:inline-block;margin-top:18px;font-family:'Cinzel',serif;font-weight:700;letter-spacing:.18em;font-size:clamp(1.05rem,5vw,1.35rem);
+ background:linear-gradient(100deg,#0b4f52 0%,#13827a 30%,#fff1c4 48%,#13827a 66%,#0b4f52 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+ filter:drop-shadow(0 2px 0 rgba(255,255,255,.5));animation:foil 5s linear infinite}
+footer .credit{margin-top:44px;font-family:'Cinzel',serif;letter-spacing:.35em;font-size:.62rem;color:var(--maroon)}
+footer .brand{display:block;margin-top:6px;font-family:'Cinzel',serif;font-weight:700;letter-spacing:.3em;padding-left:.3em;font-size:clamp(1.8rem,9vw,2.4rem);
+ background:linear-gradient(100deg,#4a0b16 0%,#a3123f 28%,#ff9f7a 45%,#ffe2a8 50%,#ff9f7a 55%,#a3123f 72%,#4a0b16 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+ filter:drop-shadow(0 3px 6px rgba(120,20,40,.3));animation:foil 4.5s linear infinite}
+
+/* ---------- PREMIUM LAYER ---------- */
+#grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.35;mix-blend-mode:multiply;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .42 0 0 0 0 .25 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+#vign{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 120% 90% at 50% 40%,transparent 55%,rgba(150,60,30,.28) 100%)}
+#dust{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+#dust i{position:absolute;width:4px;height:4px;border-radius:50%;background:radial-gradient(circle,#fff6d0,#d8ac52 60%,transparent 70%);box-shadow:0 0 6px 1px rgba(216,172,82,.55);animation:twinkle 4s ease-in-out infinite,drift 18s linear infinite}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:1;transform:scale(1.2)}}
+@keyframes drift{from{margin-top:0}to{margin-top:-60px}}
+section.lux{position:relative;margin:46px 0 0;padding:46px 20px 40px;background:linear-gradient(180deg,#fffdf9,#fffaf2);
+ border:1px solid rgba(196,154,69,.75);box-shadow:inset 0 0 0 6px #fffdf9,inset 0 0 0 7px rgba(196,154,69,.4),0 24px 50px rgba(150,95,40,.13)}
+section.lux::before,section.lux::after{content:'';position:absolute;width:46px;height:46px;pointer-events:none;
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 46' fill='none' stroke='%23c49a45' stroke-width='1.3'%3E%3Cpath d='M2 30V2h28'/%3E%3Cpath d='M8 22V8h14'/%3E%3Cpath d='M8 8c6 0 10 4 10 10'/%3E%3Ccircle cx='8' cy='8' r='2.4' fill='%23c49a45'/%3E%3C/svg%3E") no-repeat}
+section.lux::before{top:-1px;left:-1px}
+section.lux::after{bottom:-1px;right:-1px;transform:rotate(180deg)}
+.kicker{background:linear-gradient(100deg,#a87a2c 0%,#d9b25e 30%,#fff1c4 45%,#d9b25e 60%,#a87a2c 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:foil 6s linear infinite}
+@keyframes foil{from{background-position:120% 0}to{background-position:-120% 0}}
+.title::after{content:'';display:block;width:120px;height:12px;margin:12px auto 0;
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'%3E%3Cpath d='M0 6h48M72 6h48' stroke='%23c49a45' stroke-width='1'/%3E%3Cpath d='M60 1l5 5-5 5-5-5z' fill='%23c49a45'/%3E%3Ccircle cx='50' cy='6' r='1.6' fill='%23c49a45'/%3E%3Ccircle cx='70' cy='6' r='1.6' fill='%23c49a45'/%3E%3C/svg%3E") center/contain no-repeat}
+.card{border:1px solid rgba(196,154,69,.75);box-shadow:inset 0 0 0 6px #fffdf8,inset 0 0 0 7px rgba(196,154,69,.4),0 24px 50px rgba(150,95,40,.13)}
+
+/* ---------- PREMIUM OM ---------- */
+.omw{position:relative;width:min(78vw,310px);aspect-ratio:1;margin-top:30px}
+.omw .rays{position:absolute;inset:-14%;border-radius:50%;
+ background:repeating-conic-gradient(from 0deg,transparent 0 5deg,rgba(232,180,80,.45) 5deg 6deg);
+ -webkit-mask:radial-gradient(circle,#000 22%,transparent 68%);mask:radial-gradient(circle,#000 22%,transparent 68%);animation:spin 50s linear infinite}
+.omw svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.omw .r1{animation:spin 70s linear infinite}
+.omw .r2{animation:spin 45s linear infinite reverse}
+.omw .glow{position:absolute;inset:20%;border-radius:50%;
+ background:radial-gradient(circle,#fffdf0 0%,#ffeeb8 30%,rgba(246,200,110,.45) 58%,transparent 72%);animation:breathe 3.6s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.12);filter:brightness(1.12)}}
+.omw .om{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:6%;
+ font-family:'Noto Serif Devanagari',serif;font-weight:700;font-size:clamp(5.4rem,27vw,7.6rem);line-height:1;
+ background:linear-gradient(115deg,#b07a22 15%,#e0b250 35%,#fff7d6 50%,#e0b250 65%,#b07a22 85%);background-size:260% 100%;
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+ filter:drop-shadow(0 0 14px rgba(255,205,100,.85)) drop-shadow(0 3px 1px rgba(110,60,10,.35));animation:shine 3.8s linear infinite}
+.omw .orbit{position:absolute;inset:4%;animation:spin 14s linear infinite}
+.omw .orbit.o2{inset:16%;animation-duration:9s;animation-direction:reverse}
+.omw .orbit i{position:absolute;width:7px;height:7px;border-radius:50%;background:#fffbe6;box-shadow:0 0 10px 4px rgba(255,205,100,.95)}
+.omw .orbit i:nth-child(1){top:-3px;left:50%}
+.omw .orbit i:nth-child(2){bottom:12%;left:6%;width:5px;height:5px}
+.omw .orbit i:nth-child(3){top:40%;right:-3px;width:4px;height:4px}
+/* ---------- WOW script colours ---------- */
+.kicker,.hero .kick{background:linear-gradient(100deg,#6d0a2e 0%,#b5124a 25%,#e8476a 40%,#ffd88a 50%,#e8476a 60%,#b5124a 75%,#6d0a2e 100%);background-size:260% 100%;
+ -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(255,255,255,.55)) drop-shadow(0 4px 10px rgba(140,20,60,.25));animation:foil 5s linear infinite}
+body.heroin .hero .kick{animation:up 1.3s cubic-bezier(.2,.8,.2,1) 1.5s forwards,foil 5s linear infinite}
+footer .kicker{font-size:clamp(2.3rem,10.5vw,3rem)}
+#dust i{background:radial-gradient(circle,#fff,#ffe6a8 55%,transparent 70%);box-shadow:0 0 8px 2px rgba(255,236,190,.9)}
+section.lux,.card{box-shadow:inset 0 0 0 6px #fffdf9,inset 0 0 0 7px rgba(196,154,69,.4),0 0 40px rgba(255,236,200,.5),0 26px 55px rgba(140,60,30,.28)}
+/* ---------- Sri Ganeshaya Namaha (one line) ---------- */
+.hero .invo{display:block;width:100%;padding:62px 6px 0;text-align:center;font-family:'Cinzel',serif;font-weight:700;letter-spacing:.14em;font-size:clamp(.8rem,3.8vw,1.02rem);
+ background:linear-gradient(100deg,#6d0a2e 0%,#b5124a 30%,#ffd88a 50%,#b5124a 70%,#6d0a2e 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .invo.te{font-family:'Noto Serif Telugu',serif;letter-spacing:0}
+body.heroin .hero .invo{animation:up 1.3s cubic-bezier(.2,.8,.2,1) .1s forwards,foil 5s linear infinite}
 @media (prefers-reduced-motion:reduce){*{animation-duration:0s!important;transition-duration:.3s!important}}
 </style>
 </head>
 <body class="locked">
-<div id="paper"></div>
+<div id="paper"></div><div id="sheen"></div><div id="grain"></div><div id="vign"></div><div id="dust"></div>
 <canvas id="fx"></canvas>
 
 <!-- ===== reusable temple arch ===== -->
@@ -302,10 +370,19 @@ footer small{display:block;margin-top:40px;font-family:'Cinzel',serif;letter-spa
 <audio id="bgm" src="invitation2.mpeg" loop preload="auto"></audio>
 
 <main>
-  <!-- HERO : ॐ + shining names + akshinthalu, then scroll down -->
+  <!-- HERO : Sri Ganeshaya Namaha + blessings + ॐ + shining names -->
   <section class="hero" id="hero">
+    <div class="invo" id="invo">॥ SRI GANESHAYA NAMAHA ॥</div>
     <div class="brow" id="brow"><span>SRIRASTHU</span><span>SUBHAMASTHU</span><span>AVIGHNAMASTHU</span></div>
-    <div class="halo">ॐ</div>
+    <div class="omw" id="omw">
+      <div class="rays"></div>
+      <svg class="r1" id="omr1" viewBox="-50 -50 100 100"></svg>
+      <svg class="r2" id="omr2" viewBox="-50 -50 100 100"></svg>
+      <div class="glow"></div>
+      <div class="om">ॐ</div>
+      <div class="orbit"><i></i><i></i><i></i></div>
+      <div class="orbit o2"><i></i><i></i></div>
+    </div>
     <p class="tag s1" data-en="WRITTEN BY DESTINY, BLESSED BY SHIVA & PARVATI" data-te="విధి రాసిన బంధం, శివపార్వతుల ఆశీస్సులతో">WRITTEN BY DESTINY,<br>BLESSED BY SHIVA &amp; PARVATI</p>
     <p class="kick s2">Vivaha Mahotsavam</p>
     <p class="tsub s3">వివాహ మహోత్సవం</p>
@@ -348,11 +425,10 @@ footer small{display:block;margin-top:40px;font-family:'Cinzel',serif;letter-spa
   </section>
 
   <!-- INVITATION -->
-  <section class="rv">
+  <section class="rv lux">
     <svg class="mandala-ic" viewBox="-50 -50 100 100" id="mic"></svg>
     <p class="kicker" data-en="With our families' blessings" data-te="కుటుంబ సమేతంగా">With our families' blessings</p>
     <p class="title" data-en="WEDDING INVITATION" data-te="వివాహ ఆహ్వానం">WEDDING INVITATION</p>
-    <div class="divider"><i></i></div>
     <p class="lead" data-en="WE JOYFULLY REQUEST YOUR PRESENCE WITH FAMILY AND FRIENDS TO BLESS THE MARRIAGE OF OUR SON" data-te="మా అబ్బాయి వివాహ మహోత్సవానికి మీరు సకుటుంబ సపరివార సమేతంగా విచ్చేసి ఆశీర్వదించవలసిందిగా కోరుచున్నాము">WE JOYFULLY REQUEST YOUR PRESENCE WITH FAMILY AND FRIENDS TO BLESS THE MARRIAGE OF OUR SON</p>
     <p class="honor">CHI.</p>
     <p class="big">Akhil</p>
@@ -371,7 +447,7 @@ footer small{display:block;margin-top:40px;font-family:'Cinzel',serif;letter-spa
   </section>
 
   <!-- BRIDE & GROOM -->
-  <section class="rv">
+  <section class="rv lux">
     <p class="kicker" data-en="Two hearts, one journey" data-te="రెండు హృదయాలు, ఒకే ప్రయాణం">Two hearts, one journey</p>
     <p class="title" data-en="THE COUPLE" data-te="వధూవరులు">THE COUPLE</p>
     <div class="pair">
@@ -392,7 +468,7 @@ footer small{display:block;margin-top:40px;font-family:'Cinzel',serif;letter-spa
   </section>
 
   <!-- VENUE -->
-  <section class="rv">
+  <section class="rv lux">
     <p class="kicker" data-en="Find your way to us" data-te="మా వేదిక">Find your way to us</p>
     <p class="title" data-en="THE VENUE" data-te="వేదిక">THE VENUE</p>
     <div class="frame"><div>
@@ -404,7 +480,7 @@ footer small{display:block;margin-top:40px;font-family:'Cinzel',serif;letter-spa
   </section>
 
   <!-- RSVP -->
-  <section class="rv">
+  <section class="rv lux">
     <p class="kicker" data-en="We'd love to see you" data-te="మీ రాక కోసం ఎదురుచూస్తున్నాం">We'd love to see you</p>
     <p class="title" data-en="RSVP" data-te="మీ సమాధానం">RSVP</p>
     <div class="frame"><div>
@@ -417,7 +493,7 @@ footer small{display:block;margin-top:40px;font-family:'Cinzel',serif;letter-spa
   </section>
 
   <!-- AKSHINTHALU -->
-  <section class="rv">
+  <section class="rv lux">
     <p class="kicker" data-en="Bless the couple" data-te="వధూవరులను ఆశీర్వదించండి">Bless the couple</p>
     <p class="title te" style="letter-spacing:.1em">అక్షింతలు</p>
     <button class="mbtn" id="aks" data-en="SHOWER AKSHINTHALU" data-te="అక్షింతలు వేయండి">SHOWER AKSHINTHALU</button>
@@ -425,7 +501,7 @@ footer small{display:block;margin-top:40px;font-family:'Cinzel',serif;letter-spa
   </section>
 
   <!-- FAMILY -->
-  <section class="rv">
+  <section class="rv lux">
     <p class="kicker" data-en="With love from" data-te="ప్రేమతో">With love from</p>
     <p class="title" data-en="INVITED BY" data-te="ఆహ్వానించువారు">INVITED BY</p>
     <p class="fam1">Smt. Bandari Kalpana &amp; Sri. Raj Kumar</p>
@@ -435,7 +511,7 @@ footer small{display:block;margin-top:40px;font-family:'Cinzel',serif;letter-spa
     <div class="endphoto"><div class="im"><img src="invitation2 image3.jpeg" alt="Akhil and Shivani"></div></div>
     <p class="kicker" data-en="Your presence is our greatest blessing" data-te="మీ రాకే మాకు ఆశీర్వాదం">Your presence is our greatest blessing</p>
     <p class="hash">#AKHILWEDSSHIVANI</p>
-    <small>CRAFTED WITH LOVE BY UNSAID</small>
+    <p class="credit">CRAFTED WITH LOVE BY</p><span class="brand">UNSAID</span>
   </footer>
 </main>
 
@@ -452,6 +528,18 @@ const WHATSAPP_NUMBER='917893271826'; // family number: 91 + number, no + or spa
 (function(){let s='';const cols=['#1f5f7a','#2a7f8f','#3a8f6f','#c49a45'];
  [[10,10,5],[16,20,6],[22,31,7],[30,42,6]].forEach(([n,r,l],k)=>{for(let i=0;i<n;i++)s+=`<g transform="rotate(${360/n*i})"><ellipse cx="0" cy="${-r}" rx="${l*.45}" ry="${l}" fill="${cols[k]}" opacity=".9"/><circle cx="0" cy="${-r}" r="${l*.22}" fill="#0e3550"/></g>`});
  document.getElementById('mic').innerHTML=s+'<circle r="5" fill="#c49a45"/>'})();
+
+/* om mandala rings */
+(function(){let a='<defs><linearGradient id="omg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc94"/><stop offset=".5" stop-color="#c49a45"/><stop offset="1" stop-color="#8a6420"/></linearGradient></defs>';
+ a+='<circle r="47" fill="none" stroke="url(#omg)" stroke-width=".5"/><circle r="36" fill="none" stroke="url(#omg)" stroke-width=".35"/>';
+ for(let i=0;i<24;i++)a+=`<g transform="rotate(${i*15})"><path d="M0 -46 C3 -42 3 -39 0 -37 C-3 -39 -3 -42 0 -46Z" fill="none" stroke="url(#omg)" stroke-width=".6"/><circle cy="-48.5" r=".9" fill="#c49a45"/></g>`;
+ document.getElementById('omr1').innerHTML=a;
+ let b='<circle r="41.5" fill="none" stroke="#c49a45" stroke-width=".3" stroke-dasharray="1 1.6"/>';
+ for(let i=0;i<12;i++)b+=`<g transform="rotate(${i*30})"><path d="M0 -40 L1.6 -37.5 L0 -35 L-1.6 -37.5Z" fill="#d8ac52"/></g>`;
+ document.getElementById('omr2').innerHTML=b})();
+
+/* gold dust */
+(function(){const d=document.getElementById('dust');let h='';for(let i=0;i<28;i++)h+=`<i style="left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${-Math.random()*4}s,${-Math.random()*18}s;animation-duration:${3+Math.random()*3}s,${14+Math.random()*10}s"></i>`;d.innerHTML=h})();
 
 /* garland */
 (function(){const t=document.getElementById('toran');let h='';for(let i=0;i<6;i++)h+=`<span class="h" style="animation-delay:${-i*.5}s"><i></i><i></i><i></i><i></i></span>`;t.innerHTML=h})();
@@ -490,7 +578,7 @@ mb.onclick=()=>bgm.paused?bgm.play():bgm.pause();
 /* language */
 document.querySelectorAll('#lang button').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('#lang button').forEach(x=>x.classList.toggle('on',x===b));
-  const l=b.dataset.l;const br=document.getElementById('brow');br.innerHTML=l==='te'?'<span>శ్రీరస్తు</span><span>శుభమస్తు</span><span>అవిఘ్నమస్తు</span>':'<span>SRIRASTHU</span><span>SUBHAMASTHU</span><span>AVIGHNAMASTHU</span>';br.classList.toggle('te',l==='te');document.querySelectorAll('[data-en]').forEach(e=>{e.textContent=e.dataset[l];e.classList.toggle('te',l==='te')})});
+  const l=b.dataset.l;const br=document.getElementById('brow');br.innerHTML=l==='te'?'<span>శ్రీరస్తు</span><span>శుభమస్తు</span><span>అవిఘ్నమస్తు</span>':'<span>SRIRASTHU</span><span>SUBHAMASTHU</span><span>AVIGHNAMASTHU</span>';br.classList.toggle('te',l==='te');const iv=document.getElementById('invo');iv.textContent=l==='te'?'॥ శ్రీ గణేశాయ నమః ॥':'॥ SRI GANESHAYA NAMAHA ॥';iv.classList.toggle('te',l==='te');document.querySelectorAll('[data-en]').forEach(e=>{e.textContent=e.dataset[l];e.classList.toggle('te',l==='te')})});
 
 /* reveal on scroll */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
