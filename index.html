@@ -498,20 +498,6 @@ section.lux.rv.in{transform:none}
 .pair .arch .in em::first-letter{font-family:'Allura','Great Vibes',cursive;font-size:1.3em}
 .god .cn::first-letter{font-family:'Allura','Great Vibes',cursive;font-size:1.25em}
 </style>
-/* ===== FRONT PAGE : Ganesha shines when the page loads ===== */
-.entry-card img{animation:gload 2.4s ease-out both !important}
-@keyframes gload{0%{filter:brightness(.25) saturate(.6)}55%{filter:brightness(1.4) saturate(1.25)}100%{filter:brightness(1) saturate(1)}}
-#cover .god::before{content:'' !important;display:block !important;position:absolute !important;left:50%;top:37.3%;width:60%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;z-index:9 !important;opacity:1;
- background:radial-gradient(circle,rgba(255,232,150,.95) 0%,rgba(255,200,95,.45) 38%,transparent 70%) !important;mix-blend-mode:screen;
- animation:gburst 2.4s ease-out both,gpulse 2.6s ease-in-out 2.4s infinite !important;transition:opacity .5s}
-@keyframes gburst{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}45%{opacity:1;transform:translate(-50%,-50%) scale(1.25)}100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}}
-@keyframes gpulse{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}}
-#cover .god::after{content:'' !important;display:block !important;position:absolute !important;inset:0;border-radius:8px;pointer-events:none;z-index:9 !important;
- background:linear-gradient(115deg,transparent 38%,rgba(255,246,215,.6) 50%,transparent 62%) no-repeat !important;background-size:250% 100% !important;
- animation:gsweep 4.5s ease-in-out .6s infinite !important;transition:opacity .5s}
-@keyframes gsweep{0%{background-position:140% 0}45%,100%{background-position:-60% 0}}
-#cover .god .cap{z-index:10 !important}
-#cover.open .god::before,#cover.open .god::after{opacity:0 !important}
 </head>
 <body class="locked">
 <div id="paper"></div><div id="sheen"></div><div id="grain"></div><div id="vign"></div><div id="dust"></div>
